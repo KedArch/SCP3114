@@ -1,2 +1,2 @@
-# SCP096to3114
-LabAPI plugin for SCP SL, replacing spawned SCP-096 with SCP-3114.
+# SCP3114
+LabAPI plugin for SCP SL, replacing spawned SCPs with SCP-3114.

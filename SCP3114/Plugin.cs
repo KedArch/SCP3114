@@ -1,4 +1,4 @@
-namespace SCP096to3114;
+namespace SCP3114;
 
 using LabApi.Loader.Features.Plugins;
 
@@ -8,11 +8,11 @@ public class ThisPlugin : Plugin
 
     public static ThisPlugin Instance { get; private set; } = null!;
 
-    public override string Name => "SCP 096 to 3114";
+    public override string Name => "SCP 3114";
     public override string Author => "KedArch";
     public override Version Version => new(1, 0, 0);
 
-    public override string Description => "Change SCP 096 to 3114 on spawn";
+    public override string Description => "Change SCPs to 3114 on spawn";
     public override Version RequiredApiVersion => new(LabApi.Features.LabApiProperties.CompiledVersion);
 
         public override void Enable()
