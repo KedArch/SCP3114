@@ -1,7 +1,9 @@
 namespace SCP3114;
 
+using System.Diagnostics;
 using LabApi.Events.Arguments.PlayerEvents;
-using PlayerRoles;
+using LabApi.Features.Console;
+using LabApi.Features.Wrappers;
 
 public class EventHandler
 {
@@ -35,12 +37,12 @@ public class EventHandler
     {
         if (ev.ChangeReason == PlayerRoles.RoleChangeReason.RoundStart
             && this.max_scp3114 > 0
-            && this.number > 75
-            && (ev.Player.Role == RoleTypeId.Scp096
-                || ev.Player.Role == RoleTypeId.Scp079))
+            && this.number < 100.0/7
+            && ev.Player.IsSCP
+            && Player.Count > 7)
         {
             this.max_scp3114 -= 1;
-            ev.Player.SetRole(PlayerRoles.RoleTypeId.Scp3114, PlayerRoles.RoleChangeReason.LateJoin, PlayerRoles.RoleSpawnFlags.UseSpawnpoint);
+            ev.Player.SetRole(PlayerRoles.RoleTypeId.Scp3114, PlayerRoles.RoleChangeReason.None, PlayerRoles.RoleSpawnFlags.UseSpawnpoint);
             ev.Player.SendBroadcast($"You were changed to SCP-3114 because of active plugin: {ThisPlugin.Instance.Name}", 10);
         }
     }
